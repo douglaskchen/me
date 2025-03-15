@@ -1,0 +1,75 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f8f875;
+    cursor: default;
+
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: #777;
+    margin: 0;
+}
+
+.container-1 {
+    position: relative;
+    /* width: 100vw;
+    height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    gap: 35vh
+}
+
+
+.header>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+
+.header li {
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2.5px;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #777;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.text-overlay {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    text-align: center;
+}
+
+.text-overlay h1 {
+    font-size: 3rem;
+    letter-spacing: 6px;
+    color: #444;
+    margin: 0;
+    font-weight: 800;
+}
+
+.text-overlay p {}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
