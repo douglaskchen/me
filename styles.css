@@ -2,43 +2,30 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #f8f8f875;
-    cursor: default;
 
-    font-size: 1rem;
-    letter-spacing: 8px;
-    color: #777;
-    margin: 0;
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.01);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.container-1 {
-    position: relative;
-    /* width: 100vw;
-    height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    gap: 35vh
-}
-
-
-.header>ul {
+header>ul {
+    /* position: sticky; */
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 30px;
     padding-right: 25px;
-    padding-top: 10px;
 }
 
-.header li {
+header li {
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: 2.5px;
-    margin: 0;
     list-style-type: none;
 }
 
@@ -49,10 +36,84 @@ a {
     cursor: pointer;
 }
 
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f875;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#networkCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.home,
+.about {
+    animation: appear 5s ease-in-out;
+    animation-timeline: view();
+    animation-range: 0% cover 40%;
+}
+
+
+.container {
+    /* position: absolute; */
+}
+
+
+.home {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: #777;
+
+
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35vh
+}
+
 .text-overlay {
     display: flex;
     flex-direction: column;
-    z-index: 2;
+    z-index: 0;
     text-align: center;
 }
 
@@ -64,10 +125,28 @@ a {
     font-weight: 800;
 }
 
-.text-overlay p {}
 
-canvas {
-    position: absolute;
+
+
+.about {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 60vw;
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 6vh;
+    overflow: hidden;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(0deg, #a4c6e9, #d8dbdf 25%, #fccb9e 60%, #68a3dd);
+    font-family: Arial, sans-serif;
+
+    border-radius: 50px;
+}
+
+#airplaneCanvas {
+    /* position: absolute; */
     top: 0;
     left: 0;
     z-index: 0;
