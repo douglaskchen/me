@@ -240,3 +240,27 @@ window.addEventListener("scroll", () => {
     }
     rotateCards();
 });
+
+
+
+
+
+let text = document.querySelector(".text");
+let count = Math.floor(360 / text.textContent.length);
+let circles = document.querySelectorAll(".circle");
+let y = 0;
+circles.forEach((circle) => {
+    j = 0;
+    for (var i = 0; i < 360; i += count) {
+        let letter = document.createElement("span");
+        letter.className = "letter";
+        if (text.textContent[j]) {
+            letter.innerHTML = text.textContent[j];
+            j = j + 1;
+        }
+        letter.style.transform = `rotate(${i}deg) translateY(${-150 + y}px)`;
+        circle.appendChild(letter);
+    }
+    circle.style.zIndex = 1000 - y;
+    y = y + 10;
+});
