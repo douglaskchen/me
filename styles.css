@@ -7,16 +7,14 @@
 header {
     position: fixed;
     width: 100%;
-    z-index: 3;
-    background-color: rgba(0, 0, 0, 0.01);
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.01);
+    z-index: 3;
 }
 
 header>ul {
-    /* position: sticky; */
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     gap: 30px;
     padding-right: 25px;
@@ -32,7 +30,6 @@ header li {
 a {
     text-decoration: none;
     color: #777;
-    z-index: 2;
     cursor: pointer;
 }
 
@@ -41,10 +38,9 @@ a {
 body {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    height: 100%;
     width: 100%;
+    height: 300vh;
     margin: 0;
     padding: 0;
     background-color: #f8f8f875;
@@ -59,7 +55,6 @@ body::-webkit-scrollbar {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0;
     pointer-events: none;
 }
 
@@ -78,46 +73,61 @@ body::-webkit-scrollbar {
     }
 }
 
-.home,
-.about {
+/* .card {
     animation: appear 5s ease-in-out;
     animation-timeline: view();
     animation-range: 0% cover 40%;
-}
+} */
 
-
-.container {
-    /* position: absolute; */
-}
-
-
-.home {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-
-    font-size: 1rem;
-    letter-spacing: 8px;
-    color: #777;
-
-
-    position: relative;
-    width: 50vw;
-    height: 100vh;
+.card,
+.name {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 35vh
+    align-items: center;
 }
 
-.text-overlay {
-    display: flex;
-    flex-direction: column;
-    z-index: 0;
-    text-align: center;
+.card-stack {
+    position: sticky;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
 }
 
-.text-overlay h1 {
+.card {
+    position: absolute;
+
+    height: 70vh;
+    width: 50vw;
+
+    top: calc(50% - 35vh);
+    left: calc(50% - 25vw);
+
+
+    border-radius: 50px;
+    border: 4px solid #3882F6;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.away {
+    /* transform-origin: bottom left; */
+}
+
+.home {
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: #777;
+}
+
+.about {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(0deg, #a4c6e9, #d8dbdf 25%, #fccb9e 60%, #68a3dd);
+}
+
+
+
+.name h1 {
     font-size: 3rem;
     letter-spacing: 6px;
     color: #444;
@@ -125,28 +135,7 @@ body::-webkit-scrollbar {
     font-weight: 800;
 }
 
-
-
-
-.about {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 60vw;
-    height: 80vh;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 6vh;
-    overflow: hidden;
-    background-color: #8EC5FC;
-    background-image: linear-gradient(0deg, #a4c6e9, #d8dbdf 25%, #fccb9e 60%, #68a3dd);
-    font-family: Arial, sans-serif;
-
-    border-radius: 50px;
-}
-
 #airplaneCanvas {
-    /* position: absolute; */
     top: 0;
     left: 0;
     z-index: 0;
